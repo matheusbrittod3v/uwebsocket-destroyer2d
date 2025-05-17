@@ -1,20 +1,20 @@
-# Usa imagem oficial do Node.js 20 (alpine = mais leve)
-FROM node:20-alpine
+# Usa imagem Node.js 20.11.1 oficial (glibc, compatível com uWebSockets.js)
+FROM node:20.11.1-bullseye
 
-# Define diretório de trabalho
+# Define diretório de trabalho no container
 WORKDIR /app
 
-# Copia arquivos do projeto para o container
+# Copia os arquivos de dependência
 COPY package*.json ./
 
-# Instala dependências
+# Instala as dependências do projeto
 RUN npm install
 
-# Copia o restante do código para o container
+# Copia todo o restante da aplicação
 COPY . .
 
-# Expõe a porta usada pela aplicação
-EXPOSE 5588
+# Expõe a porta (ajuste se usar outra)
+EXPOSE 3000
 
-# Comando para iniciar a aplicação
+# Inicia o servidor
 CMD ["npm", "start"]
