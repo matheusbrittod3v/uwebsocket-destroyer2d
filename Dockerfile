@@ -1,20 +1,20 @@
-# Usa imagem Node.js 20.11.1 oficial (glibc, compatível com uWebSockets.js)
-FROM node:20.11.1-bullseye
+# Usa imagem com Node.js 20.11.1 e glibc >= 2.33 (via Debian Bookworm)
+FROM node:20.11.1-bookworm
 
-# Define diretório de trabalho no container
+# Define diretório de trabalho
 WORKDIR /app
 
 # Copia os arquivos de dependência
 COPY package*.json ./
 
-# Instala as dependências do projeto
+# Instala dependências
 RUN npm install
 
-# Copia todo o restante da aplicação
+# Copia os arquivos da aplicação
 COPY . .
 
-# Expõe a porta (ajuste se usar outra)
+# Expõe a porta do servidor (ajuste conforme necessário)
 EXPOSE 3000
 
-# Inicia o servidor
+# Comando de inicialização
 CMD ["npm", "start"]
