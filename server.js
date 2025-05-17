@@ -9,15 +9,15 @@ const GAME_CONFIG = {
     spawnRadius: 1000,           // Raio da área de spawn
     weaponCooldown: 300,         // Tempo mínimo entre disparos (ms)
     projectileSpeed: 500,        // Velocidade dos projéteis
-    projectileLifetime: 1000,    // Duração dos projéteis (ms)
+    projectileLifetime: 500,    // Duração dos projéteis (ms)
     maxProjectiles: 100,         // Projéteis máximos por jogador
     defaultShipStats: {
       maxHealth: 100,            // Vida máxima
       maxShield: 50,             // Escudo máximo
       shieldRegen: 0.5,          // Regeneração de escudo por segundo
       speed: 30,                // Velocidade de movimento
-      rotationSpeed: 2,         // Velocidade de rotação
-      damage: 10,                // Dano base
+      rotationSpeed: 1.2,         // Velocidade de rotação
+      damage: 15,                // Dano base
       radius: 30                 // Raio da nave (para colisões)
     },
     // Configurações de inimigos
